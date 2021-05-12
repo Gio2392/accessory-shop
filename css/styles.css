@@ -13,6 +13,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 *,*::before,*::after{
     box-sizing: inherit;
@@ -85,6 +86,39 @@ p.bold{font-weight: 700; color: var(--boldColor);}
 
 .grid .menu{
     grid-column: span 4;
+    position: relative;
+    
+}
+.menu img{
+    cursor: pointer;
+}
+.menu ul{
+    width: 20rem;
+    position: absolute;
+    left: 5rem;
+    top: 5rem;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;    
+    border-radius: 1rem;
+    
+}
+.menu .toggle li a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    transition: all .3s ease;
+    
+}
+.menu .toggle li a:hover{
+    background-color: var(--copyWriting);
+    color: #fff;
+    
+}
+
+.menu .toggle.active{
+    display: flex;
 }
 .grid .logo{
     grid-column: 5 / span 4;
@@ -128,6 +162,7 @@ p.bold{font-weight: 700; color: var(--boldColor);}
 }
 .btn{
     font-size: 1.6rem;
+    background-color: transparent;
     font-weight: 400;
     max-width: 17.6rem;
     color: var(--buttonFooter);
